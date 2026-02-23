@@ -108,18 +108,3 @@ json{
 
 -------  -------  -------  -------  -------  -------  -------  -------  ------- 
 
-
-Project Structure
-src/main/java/com/appswave/membership/
-├── config/          # Security, JWT, Localization config
-├── domain/          # Entities and repositories
-├── enums/           # Gender, MembershipType, Persona, Role
-├── exception/       # Custom exceptions and global handler
-├── filter/          # JWT authentication filter
-├── security/        # UserDetails implementation
-├── service/         # Business logic
-├── util/            # JWT service, Message utilities
-└── web/
-    ├── api/         # Swagger interfaces
-    ├── controller/  # REST controllers
-    └── dto/         # Request and response DTOs
