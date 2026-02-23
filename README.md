@@ -38,8 +38,11 @@ Accept-Language: ar   # Arabic
 
 
 Example Requests
+ -------  -------  -------  -------  -------  -------  -------  -------  ------- 
+
 Register
-bashcurl -X POST http://localhost:8080/api/v1/authentication/register \
+
+curl -X POST http://localhost:8080/api/v1/authentication/register \
   -H "Content-Type: application/json" \
   -H "Accept-Language: en" \
   -d '{
@@ -48,16 +51,23 @@ bashcurl -X POST http://localhost:8080/api/v1/authentication/register \
     "email": "maiQamaj@gmail.com",
     "password": "Password@2026"
   }'
+  
+-------  -------  -------  -------  -------  -------  -------  -------  ------- 
+
 Login
-bashcurl -X POST http://localhost:8080/api/v1/authentication/login \
+
+curl -X POST http://localhost:8080/api/v1/authentication/login \
   -H "Content-Type: application/json" \
   -H "Accept-Language: en" \
   -d '{
     "email": "admin@appswave.com",
     "password": "Admin@2026"
   }'
+
+ -------  -------  -------  -------  -------  -------  -------  -------  ------- 
 Create Member (Admin)
-bashcurl -X POST http://localhost:8080/api/v1/members \
+
+curl -X POST http://localhost:8080/api/v1/members \
   -H "Content-Type: application/json" \
   -H "Accept-Language: en" \
   -H "Authorization: Bearer YOUR_TOKEN" \
@@ -70,23 +80,34 @@ bashcurl -X POST http://localhost:8080/api/v1/members \
     "membershipType": "INTERNAL_MEMBER",
     "persona": "Individual"
   }'
+  
+-------  -------  -------  -------  -------  -------  -------  -------  ------- 
+
 Get All Members with Filters
-bashcurl -X GET "http://localhost:8080/api/v1/members?page=0&size=10&search=mai&gender=FEMAIL" \
+
+curl -X GET "http://localhost:8080/api/v1/members?page=0&size=10&search=mai&gender=FEMAIL" \
   -H "Accept-Language: en" \
   -H "Authorization: Bearer YOUR_TOKEN"
+  
+-------  -------  -------  -------  -------  -------  -------  -------  ------- 
 
 
-json{
+{
   "responseCode": 200,
   "success": true,
   "currentDate": "2026-02-23T00:00:00",
   "message": "Operation successful"
 }
+
+
 Error Response Format
 json{
   "success": false,
   "message": "Localized error message"
 }
+
+-------  -------  -------  -------  -------  -------  -------  -------  ------- 
+
 
 Project Structure
 src/main/java/com/appswave/membership/
